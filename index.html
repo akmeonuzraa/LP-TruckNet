@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TruckNet - L'intelligence au coeur du transport routier</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#c0c7d3",
+                    "surface-bright": "#37393a",
+                    "tertiary": "#c1c6d7",
+                    "on-primary-container": "#eeefff",
+                    "on-secondary-fixed-variant": "#404752",
+                    "inverse-on-surface": "#2f3131",
+                    "secondary-container": "#404752",
+                    "inverse-primary": "#0053db",
+                    "on-error-container": "#ffdad6",
+                    "outline": "#8d90a0",
+                    "secondary": "#c0c7d3",
+                    "on-surface-variant": "#c3c6d7",
+                    "on-primary-fixed": "#00174b",
+                    "background": "#121414",
+                    "tertiary-fixed-dim": "#c1c6d7",
+                    "surface-container-high": "#282a2b",
+                    "secondary-fixed": "#dce3f0",
+                    "on-tertiary-fixed": "#161c28",
+                    "on-error": "#690005",
+                    "surface-container-low": "#1a1c1c",
+                    "surface-container-lowest": "#0c0f0f",
+                    "on-surface": "#e2e2e2",
+                    "surface-container": "#1e2020",
+                    "surface-tint": "#b4c5ff",
+                    "on-secondary": "#2a313b",
+                    "surface": "#121414",
+                    "primary-container": "#2563eb",
+                    "error": "#ffb4ab",
+                    "surface-variant": "#333535",
+                    "on-secondary-container": "#afb5c2",
+                    "primary-fixed": "#dbe1ff",
+                    "surface-dim": "#121414",
+                    "surface-container-highest": "#333535",
+                    "primary": "#b4c5ff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-tertiary": "#2b303d",
+                    "error-container": "#93000a",
+                    "on-tertiary-container": "#ecf0ff",
+                    "tertiary-container": "#686d7c",
+                    "on-primary": "#002a78",
+                    "on-tertiary-fixed-variant": "#414754",
+                    "tertiary-fixed": "#dde2f3",
+                    "outline-variant": "#434655",
+                    "on-secondary-fixed": "#151c25",
+                    "inverse-surface": "#e2e2e2",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "on-background": "#e2e2e2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "sm": "8px",
+                    "max-width": "1440px",
+                    "margin-mobile": "16px",
+                    "lg": "24px",
+                    "base": "4px",
+                    "gutter": "16px",
+                    "xl": "40px",
+                    "xs": "4px",
+                    "md": "16px",
+                    "margin-desktop": "32px"
+            },
+            "fontFamily": {
+                    "title-lg": ["DM Sans"],
+                    "display-lg": ["Syne"],
+                    "display-md": ["Syne"],
+                    "headline-sm": ["Syne"],
+                    "label-lg": ["DM Sans"],
+                    "headline-md": ["Syne"],
+                    "body-lg": ["DM Sans"],
+                    "body-md": ["DM Sans"],
+                    "headline-lg": ["Syne"],
+                    "headline-lg-mobile": ["Syne"],
+                    "label-md": ["DM Sans"],
+                    "label-sm": ["DM Sans"]
+            },
+            "fontSize": {
+                    "title-lg": ["18px", {"lineHeight": "24px", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "display-md": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg": ["30px", {"lineHeight": "38px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+                    "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #121414;
+            color: #e2e2e2;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(30, 32, 32, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(141, 144, 160, 0.1);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at top center, rgba(37, 99, 235, 0.15) 0%, rgba(18, 20, 20, 0) 60%);
+        }
+    </style>
+</head>
+<body class="font-body-md selection:bg-primary-container selection:text-white">
+<!-- Header Navigation -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-outline-variant/20 shadow-md shadow-background/50">
+<div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-max-width mx-auto">
+<div class="flex items-center gap-2">
+<img alt="TruckNet Logo" class="h-8 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0uhvUxI7t8gZ2xixXaEEsQfWHKPVvwXko63ZqBJZZK_iSYXRW-qMx2PHOKrOK8k4F2FOGqjuU62p8HMfEAtJEZzgZBw7SLKnltDL5q2JWeL6NwAh-8UzLGxpMZONCNRPLjGtXnnBrBc1tTBADXLMNp9uqNV4etBpvXITczMcpsC-mxr6UvmNVAy6YK-OK7YJS8mwJIEulOBYvjPL7vQrvkvrQ1BFKty6LMdEcyddvvNnTmW8nAO-U3qRk-ivXvyrhlEzVBnQ1mTKuw"/>
+<span class="font-display-md text-display-md font-bold text-primary tracking-tight">TruckNet</span>
+</div>
+<nav class="hidden md:flex items-center gap-xl">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-lg text-label-lg" href="#">SafeDetect</a>
+<a class="text-on-surface-variant font-medium hover:text-on-surface transition-colors font-label-lg text-label-lg" href="#">TruckNet Core</a>
+<a class="text-on-surface-variant font-medium hover:text-on-surface transition-colors font-label-lg text-label-lg" href="#">ColdChain</a>
+<a class="text-on-surface-variant font-medium hover:text-on-surface transition-colors font-label-lg text-label-lg" href="#">About Us</a>
+<a class="text-on-surface-variant font-medium hover:text-on-surface transition-colors font-label-lg text-label-lg" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant font-medium hover:text-on-surface transition-colors font-label-lg text-label-lg">Login</button>
+<button class="bg-primary-container text-white px-6 py-2 rounded-lg font-bold hover:shadow-primary/20 transition-all duration-300 hover:scale-95">Get Started</button>
+</div>
+</div>
+</header>
+<main class="pt-24 overflow-x-hidden">
+<!-- Hero Section -->
+<section class="relative min-h-[819px] flex flex-col items-center justify-center text-center px-margin-desktop py-xl hero-gradient">
+<!-- Background Image Integration -->
+<div class="absolute inset-0 z-[-1] opacity-40 overflow-hidden">
+<img alt="Fleet Visualization" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDW2_B4chnc7zJqO0imd9ZTWLNFeTK3lZ72nvAbt_9XlxEyQ8tv8QliH13lEVNhGD5p3vD3M_zlID3iIQY2ovoSpt13G6VnP4w_g5uNXeH7g2_-HYl4DEzirkUcprV4XMa0Ooaj6mHCY27NvcdgOzvi3Lw2oPcQtsLUhFSnojmXUETFBq7tDX1wkxjOviTvGYFYZPrYl4KxUWHiB6Bb2R5jrvBPRQpbZwB-NkJR28jvZbx4LcI5RMa-JWCVLsJl6vU4TqlcMK68kAA"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+</div>
+<div class="max-w-4xl mx-auto space-y-md">
+<span class="px-4 py-1.5 rounded-full border border-primary/30 text-primary font-label-md text-label-md bg-primary/5 uppercase tracking-widest">B2B SaaS - Transport Routier</span>
+<h1 class="font-display-lg text-display-lg text-on-surface leading-tight">
+                    L'intelligence au coeur du transport routier <span class="text-primary-container">au Monde</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Solution complète de gestion de flottes pour les entreprises de 5 à 80 véhicules. Sécurité, conformité ESG et chaîne du froid en temps réel.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+<button class="bg-primary-container text-white px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:scale-95 transition-transform">
+                        Découvrir les Modules
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="border border-outline-variant text-on-surface px-8 py-4 rounded-lg font-bold hover:bg-white/5 transition-all">
+                        Rencontrer notre Equipe
+                    </button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-xl pt-24 border-t border-outline-variant/10 mt-xl">
+<div class="flex flex-col">
+<span class="font-display-md text-primary font-black">3</span>
+<span class="font-label-md text-on-surface-variant uppercase tracking-tighter">Modules</span>
+</div>
+<div class="flex flex-col">
+<span class="font-display-md text-primary font-black">5</span>
+<span class="font-label-md text-on-surface-variant uppercase tracking-tighter">Fondateurs</span>
+</div>
+<div class="flex flex-col">
+<span class="font-display-md text-primary font-black">MAD</span>
+<span class="font-label-md text-on-surface-variant uppercase tracking-tighter">Pricing</span>
+</div>
+<div class="flex flex-col">
+<span class="font-display-md text-primary font-black">2026</span>
+<span class="font-label-md text-on-surface-variant uppercase tracking-tighter">Lancement</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Problem Section -->
+<section class="py-xl px-margin-desktop bg-surface-container-lowest">
+<div class="max-w-max-width mx-auto text-center space-y-md mb-xl">
+<span class="font-label-md text-primary uppercase tracking-widest">Le Problème</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Les défis du transport routier au Maroc</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">Les flottes marocaines font face à des problèmes critiques sans solutions locales adaptées.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg max-w-max-width mx-auto">
+<div class="glass-card p-xl rounded-xl space-y-md group hover:border-primary/50 transition-colors">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">security</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Angles Morts</h3>
+<p class="font-body-md text-on-surface-variant">Les accidents dus aux angles morts représentent 30% des sinistres de flottes. Aucune solution abordable sur le marché marocain.</p>
+</div>
+<div class="glass-card p-xl rounded-xl space-y-md group hover:border-primary/50 transition-colors">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Conformité ESG Absente</h3>
+<p class="font-body-md text-on-surface-variant">Les PME de transport n'ont pas les outils pour générer des rapports ESG conformes aux normes ISO 26000 et CSRD.</p>
+</div>
+<div class="glass-card p-xl rounded-xl space-y-md group hover:border-primary/50 transition-colors">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">ac_unit</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Chaîne du Froid Aveugle</h3>
+<p class="font-body-md text-on-surface-variant">Les transporteurs frigorifiques perdent 15% de leur cargaison par manque de monitoring température en temps réel.</p>
+</div>
+</div>
+</section>
+<!-- Modules Section -->
+<section class="py-xl px-margin-desktop">
+<div class="max-w-max-width mx-auto text-center space-y-md mb-xl">
+<span class="font-label-md text-primary uppercase tracking-widest">Nos Modules</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Une solution complète et modulaire</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Choisissez les modules adaptés à vos besoins. Intégration transparente et support local.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-xl max-w-max-width mx-auto">
+<!-- SafeDetect -->
+<div class="relative flex flex-col bg-surface-container rounded-xl overflow-hidden border border-outline-variant/30 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500">
+<div class="p-lg border-b border-outline-variant/30 flex items-center gap-4">
+<div class="w-14 h-14 bg-primary-container rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">SafeDetect</h3>
+<span class="font-label-sm text-primary uppercase tracking-widest">Sécurité</span>
+</div>
+</div>
+<div class="p-lg space-y-lg flex-grow"><div class="w-full h-48 rounded-lg overflow-hidden mb-lg border border-outline-variant/30">
+<img alt="SafeDetect AI Blind Spot Detection" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ6-G3P9iLVYYJX3Pg3u7H6u99Kgs35qiqnbXD8FKM0hf-56zqxLMcaIyRdC47oPG4e_Bq8vHWAiuzxUSfdbdfeF-3Ehr-yL_5RwdXCH2S3dzO9QuafyV0cnxdTiLSLXouoOIWnmMC30TK3snjBOxIy4zhBXkbBfsmnlJIPNXajkX7oGpXenJPk5IVsT06V5FjJJiLIgZ79P6dqpCXqYmGfik_ovJkscIvi4pj9Ph-saY9fVtkFlx-xWOyOFrfpMzIFoFho6FXTsM"/>
+</div>
+<p class="font-body-md text-on-surface-variant">Détection des angles morts par vision IA et radar haute précision.</p>
+<ul class="space-y-sm">
+<li class="flex items-center gap-2 text-on-surface font-body-md">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                YOLOv8 + HLK-LD2450 radar
+                            </li>
+<li class="flex items-center gap-2 text-on-surface font-body-md">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                Raspberry Pi 4 Computing core
+                            </li>
+<li class="flex items-center gap-2 text-on-surface font-body-md">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                Arducam 180 degres FOV
+                            </li>
+<li class="flex items-center gap-2 text-on-surface font-body-md">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                1800 - 2200 MAD/véhicule
+                            </li>
+</ul>
+</div>
+<div class="p-lg bg-surface-container-high border-t border-outline-variant/30">
+<p class="font-label-sm text-primary italic">Partenariat Wafa Assurance / AXA Maroc</p>
+</div>
+</div>
+<!-- TruckNet Core -->
+<div class="relative flex flex-col bg-surface-container rounded-xl overflow-hidden border border-outline-variant/30 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500">
+<div class="p-lg border-b border-outline-variant/30 flex items-center gap-4">
+<div class="w-14 h-14 bg-primary-container rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">insights</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">TruckNet Core</h3>
+<span class="font-label-sm text-primary uppercase tracking-widest">ESG</span>
+</div>
+</div>
+<div class="p-lg space-y-lg flex-grow"><div class="w-full h-48 rounded-lg overflow-hidden mb-lg border border-outline-variant/30">
+<img alt="TruckNet Core ESG Dashboard" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYdjpx8Zd_PVVm1A5bpVUuRIcu8KUILP2R8bajaQp3VoQXE0JZfxRztQkcdpnc4LzAgmVhpGPQPfe6AXX7vEMICMqNZzURxQRdPhvuM9BIoJqjAOXsRcYP0XoHVlfnf3j9gGKqTHltWmsDP5UChrPFKiuDbHMYDSC7Y8-C_gCiMpFKv5PQQMrgSr9cduqmJMba4BUL_NbP-ON3V2ucf_skbitqE6oIgaV5zE_NBYnSrql8BTRG5OPbA2PDjkw1bVBckp9Ul36CLgg"/>
+</div>
+<p class="font-body-md text-on-surface-variant">Rapports ESG automatiques conformes aux normes internationales.</p>
+<ul class="space-y-sm">
+<li class="flex items-center gap-2 text-on-surface font-body-md">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                LLM Agents pour analyse de données
+                            </li>
+<li class="flex items-center gap-2 text-on-surface font-body-md">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                ISO 26000 / CSRD Compliance
+                            </li>
+<li class="flex items-center gap-2 text-on-surface font-body-md">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                Rapport DG mensuel auto-généré
+                            </li>
+<li class="flex items-center gap-2 text-on-surface font-body-md">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                Dashboard exécutif temps réel
+                            </li>
+</ul>
+</div>
+<div class="p-lg bg-surface-container-high border-t border-outline-variant/30">
+<p class="font-label-sm text-primary italic">Conformité réglementaire garantie</p>
+</div>
+</div>
+<!-- ColdChain -->
+<div class="relative flex flex-col bg-surface-container rounded-xl overflow-hidden border border-outline-variant/30 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500">
+<div class="p-lg border-b border-outline-variant/30 flex items-center gap-4">
+<div class="w-14 h-14 bg-primary-container rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">thermostat</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">ColdChain</h3>
+<span class="font-label-sm text-primary uppercase tracking-widest">IoT</span>
+</div>
+</div>
+<div class="p-lg space-y-lg flex-grow"><div class="w-full h-48 rounded-lg overflow-hidden mb-lg border border-outline-variant/30">
+<img alt="ColdChain IoT Monitoring" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhtvuK9ZTilG5ACrKhnIS3IB8GfsJeuVaP5CjZehKLCG1GcfDoOrlHZxrc3diaFVVKGoRz19ckG59oOFfQYKBZWLUF0OAqi5epALAOktMqz_ujrOQa8HvjsXB9FLhi3BV2pNQeRl_ROguWVNCMwQBvInefOenMXjYjt7Ts3x73ErMWSznzUiYKofxCdFcy48LQ3XaDKLaZlDbBhKEOhHZnyJ5RVd4sad8GMew7CG-OyKWLcZaKAuo4vOD0Dq2WwHHBuXl3VSgLVC8"/>
+</div>
+<p class="font-body-md text-on-surface-variant">Monitoring température et chocs en temps réel pour denrées périssables.</p>
+<ul class="space-y-sm">
+<li class="flex items-center gap-2 text-on-surface font-body-md">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                DHT11 + MPU6050 sensors
+                            </li>
+<li class="flex items-center gap-2 text-on-surface font-body-md">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                Kafka vers InfluxDB pipeline
+                            </li>
+<li class="flex items-center gap-2 text-on-surface font-body-md">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                Alertes temps réel (SMS/Push)
+                            </li>
+<li class="flex items-center gap-2 text-on-surface font-body-md">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                Historique complet de la chaîne
+                            </li>
+</ul>
+</div>
+<div class="p-lg bg-surface-container-high border-t border-outline-variant/30">
+<p class="font-label-sm text-primary italic">Zéro perte de cargaison</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Tech Stack Section -->
+<section class="py-xl px-margin-desktop bg-surface-container-low">
+<div class="max-w-max-width mx-auto">
+<div class="text-center space-y-md mb-xl">
+<span class="font-label-md text-primary uppercase tracking-widest">Tech Stack</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Technologies de pointe marocain</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Une architecture moderne, scalable et sécurisée pour les flottes de demain.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-lg">
+<div class="space-y-sm">
+<h4 class="font-label-lg text-primary uppercase border-b border-outline-variant/30 pb-2">Hardware</h4>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant px-3 py-1 rounded text-label-md">ESP32</span>
+<span class="bg-surface-variant px-3 py-1 rounded text-label-md">Raspberry Pi 4</span>
+<span class="bg-surface-variant px-3 py-1 rounded text-label-md">HLK-LD2450</span>
+<span class="bg-surface-variant px-3 py-1 rounded text-label-md">Arducam</span>
+<span class="bg-surface-variant px-3 py-1 rounded text-label-md">DHT11</span>
+<span class="bg-surface-variant px-3 py-1 rounded text-label-md">MPU6050</span>
+</div>
+</div>
+<div class="space-y-sm">
+<h4 class="font-label-lg text-primary uppercase border-b border-outline-variant/30 pb-2">IA &amp; DATA</h4>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant px-3 py-1 rounded text-label-md">YOLOv8</span>
+<span class="bg-surface-variant px-3 py-1 rounded text-label-md">LLM Agents</span>
+<span class="bg-surface-variant px-3 py-1 rounded text-label-md">Kafka</span>
+<span class="bg-surface-variant px-3 py-1 rounded text-label-md">InfluxDB</span>
+<span class="bg-surface-variant px-3 py-1 rounded text-label-md">PostgreSQL</span>
+</div>
+</div>
+<div class="space-y-sm">
+<h4 class="font-label-lg text-primary uppercase border-b border-outline-variant/30 pb-2">Backend</h4>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant px-3 py-1 rounded text-label-md">FastAPI</span>
+<span class="bg-surface-variant px-3 py-1 rounded text-label-md">Python</span>
+<span class="bg-surface-variant px-3 py-1 rounded text-label-md">AWS eu-west-3</span>
+</div>
+</div>
+<div class="space-y-sm">
+<h4 class="font-label-lg text-primary uppercase border-b border-outline-variant/30 pb-2">Frontend</h4>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant px-3 py-1 rounded text-label-md">React</span>
+<span class="bg-surface-variant px-3 py-1 rounded text-label-md">TypeScript</span>
+<span class="bg-surface-variant px-3 py-1 rounded text-label-md">TailwindCSS</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Team Section -->
+<section class="py-xl px-margin-desktop relative">
+<div class="max-w-max-width mx-auto text-center space-y-md mb-xl relative z-10">
+<span class="font-label-md text-primary uppercase tracking-widest">Notre Equipe</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Les fondateurs</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Une équipe pluridisciplinaire issue de l'Ecole Polytechnique d'Agadir - Universiapolis</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-md max-w-max-width mx-auto relative z-10">
+<!-- Card Founder -->
+<div class="flex flex-col items-center bg-surface-container p-lg rounded-xl border border-outline-variant/30 group">
+<div class="w-24 h-24 rounded-full bg-outline-variant mb-4 overflow-hidden">
+<img alt="Amoura Kenza" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBebfkJvrPb7h5-YGjfL3PB-a23gvU6-O4iFjlfxaofKgbekk6mOWjakMLEl3tGgAVOOQ1S1n1yWtoRZmbz4OIuizYhShvH7PqXW6-nQYYLAQeMft404LXiN_8xpp0hP4-d8T6wdlX1pc6nfO3KMMXY4e26YVX4JwfCSjAhZVOfYCnv9Ihs-fqJJcE8atdjimxE41maZ3ia6aJoAiwwGlY4lR0rqzAxkGqSHwtY5XqXzNxcpSzm3s7AaTxzJzi2D29Jq-dVqljOsVA"/>
+</div>
+<h4 class="font-title-lg text-on-surface">Amoura Kenza</h4>
+<p class="font-label-sm text-primary mb-2">Co-fondatrice</p>
+<p class="font-body-md text-on-surface-variant text-center">Big Data &amp; IA</p>
+</div>
+<div class="flex flex-col items-center bg-surface-container p-lg rounded-xl border border-primary/40 group relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-primary px-2 py-1 text-[10px] text-on-primary font-bold">FONDATEUR</div>
+<div class="w-24 h-24 rounded-full bg-outline-variant mb-4 overflow-hidden">
+<img alt="Ayman Allouch" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjmFJ7u1vN8P5YqQW0DEmSPholsbrqrvvGt8CH1FtYbkoNxHojbgsX6ZuAj_BqGDqnKPVXQAtW6ybYMbUp2q0CUpifO0VgQ3zXm5qnzJfroMRYEMsWIRpkuZ6sy8P4RrLezZvVuS1ubqEnKRtQjyL2UYeRbSrbs0V0WHvd6ekJT9S5snHLrLSspXQgbgKe76C-HrSGrmntBPFUyRM5v0OhpZypLufi7cPzetjMumAcy_YreATmeg09geaymuq4GWJj_p4fiAYy0pU"/>
+</div>
+<h4 class="font-title-lg text-on-surface">Ayman Allouch</h4>
+<p class="font-label-sm text-primary mb-2">Fondateur</p>
+<p class="font-body-md text-on-surface-variant text-center">Backend Senior, Cloud &amp; Infra</p>
+</div>
+<div class="flex flex-col items-center bg-surface-container p-lg rounded-xl border border-outline-variant/30 group">
+<div class="w-24 h-24 rounded-full bg-outline-variant mb-4 overflow-hidden">
+<img alt="Ouissal Nari" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC19K8RostgKLqy0LkMA1QYQSXbDNXIqdnLZtxpiQdGEouA32KkcjF1RXnouh2yAZLiE0cSyc8Ibxac998Y9NfT_6pFhyGQBX9NxmGzMt1H5PX5u5fJw8ITFLBo52oS-HAftFB66dLWugHpv9l75-6K87JVXWtBoQ5zukRDE2wXtaBEkmcj8Zqg4DPcby1cX56Gf0tuzd7UFhaAarOnxEIbpDJ9nIT3El6MNPyiH32iu3HiYyaw17bpj1-5jw9NusO8qpytu7ag_CA"/>
+</div>
+<h4 class="font-title-lg text-on-surface">Ouissal Nari</h4>
+<p class="font-label-sm text-primary mb-2">Co-fondatrice</p>
+<p class="font-body-md text-on-surface-variant text-center">Big Data &amp; IA</p>
+</div>
+<div class="flex flex-col items-center bg-surface-container p-lg rounded-xl border border-outline-variant/30 group">
+<div class="w-24 h-24 rounded-full bg-outline-variant mb-4 overflow-hidden">
+<img alt="Adam El-Araqy" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC8wfCqcugbBMwxe10nSw-GwUPLzg6tObPkwveSTJXQrBzfxqGEF9Gio3hEZFbDqy65JbI22Iqe9jDnoabDIFsMEC_vHPb1ZQS_FbpTqAFkxEwXMzrqpTsMc-PxIAaHmWSOQzdHlhfhoUCYkOmJgA3Mq27CQaCR4U9yx2-OWkMk-QnzZvbTEC-aTPY1hghe-6zuRXzrVsFKJQViYx3AHdlyUhwVKwq6QBXfJiF30ia02eAsy8UAMsmBGvAXSYlHTtDw6l_Kiqlnz4"/>
+</div>
+<h4 class="font-title-lg text-on-surface">Adam El-Araqy</h4>
+<p class="font-label-sm text-primary mb-2">Co-fondateur</p>
+<p class="font-body-md text-on-surface-variant text-center">Systemes embarqués &amp; IoT</p>
+</div>
+<div class="flex flex-col items-center bg-surface-container p-lg rounded-xl border border-outline-variant/30 group">
+<div class="w-24 h-24 rounded-full bg-outline-variant mb-4 overflow-hidden">
+<img alt="Abdelmajid Chantir" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJLWZHaOy8t6DYJ0iJ_x9UJ3ScIMYKABCLzsgERCA4OLXXiOHLEMePd3UUTj-msTCCT7oHA1mwYO7TKsShtDanMliogC7sYrZyibg_eivh7dj0LgkvVjDpitC8ZMLE4npkb-DnKnda8AyrNEz2AQPppHpFACBu55wydG63ANoPpfVuf5gPI4mBjw0HSGqO1Y4VOh5LTp6A8JeODcAcvJV_PYobi1O9_jAEbNsyKnEcY_npc3sEMUwFUC8l6amqO4BYnc2U-Lj2lQg"/>
+</div>
+<h4 class="font-title-lg text-on-surface">Abdelmajid Chantir</h4>
+<p class="font-label-sm text-primary mb-2">Co-fondateur</p>
+<p class="font-body-md text-on-surface-variant text-center">Systemes embarqués &amp; IoT</p>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-xl px-margin-desktop bg-surface-container-lowest">
+<div class="max-w-4xl mx-auto glass-card p-xl rounded-2xl text-center space-y-lg border-primary/20">
+<span class="font-label-md text-primary uppercase tracking-widest">Contact</span>
+<h2 class="font-headline-lg text-display-md text-on-surface">Pret a transformer votre flotte ?</h2>
+<p class="font-body-lg text-on-surface-variant">Contactez-nous pour une démonstration personnalisée et un devis adapté à vos besoins.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+<a class="bg-primary-container text-white px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-3 hover:scale-95 transition-transform" href="mailto:contact@trucknet.ma">
+<span class="material-symbols-outlined">mail</span>
+                        contact@trucknet.ma
+                    </a>
+<a class="bg-surface-container-high border border-outline-variant/50 text-on-surface px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-3 hover:bg-surface-variant transition-all" href="#">
+<span class="material-symbols-outlined">hub</span>
+                        GitHub
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/30 mt-xl">
+<div class="w-full px-margin-desktop py-xl flex flex-col md:flex-row justify-between items-center max-w-max-width mx-auto gap-lg">
+<div class="flex items-center gap-2">
+<img alt="TruckNet Logo" class="h-8 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0uhvUxI7t8gZ2xixXaEEsQfWHKPVvwXko63ZqBJZZK_iSYXRW-qMx2PHOKrOK8k4F2FOGqjuU62p8HMfEAtJEZzgZBw7SLKnltDL5q2JWeL6NwAh-8UzLGxpMZONCNRPLjGtXnnBrBc1tTBADXLMNp9uqNV4etBpvXITczMcpsC-mxr6UvmNVAy6YK-OK7YJS8mwJIEulOBYvjPL7vQrvkvrQ1BFKty6LMdEcyddvvNnTmW8nAO-U3qRk-ivXvyrhlEzVBnQ1mTKuw"/>
+<span class="font-display-md text-display-md text-on-surface font-black">TruckNet</span>
+</div>
+<p class="font-body-md text-body-md text-secondary-fixed-dim text-center">© 2024 TruckNet Logistics Technology. Tous droits réservés.</p>
+<nav class="flex gap-lg">
+<a class="text-on-secondary-container hover:text-on-surface transition-colors font-label-md text-label-md" href="#">Privacy Policy</a>
+<a class="text-on-secondary-container hover:text-on-surface transition-colors font-label-md text-label-md" href="#">Terms of Service</a>
+<a class="text-on-secondary-container hover:text-on-surface transition-colors font-label-md text-label-md" href="#">Fleet Safety</a>
+<a class="text-on-secondary-container hover:text-on-surface transition-colors font-label-md text-label-md" href="#">Support</a>
+</nav>
+</div>
+</footer>
+</body></html>
