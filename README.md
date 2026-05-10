@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="assets/logo-TruckNet.jpeg" alt="TruckNet Logo" width="160"/>
+  <img src="./assets/logo-TruckNet.jpeg" alt="TruckNet Logo" width="160"/>
 </p>
 
 <h1 align="center">TruckNet</h1>
 <p align="center"><strong>Intelligence au cœur du transport routier marocain</strong></p>
 
 <p align="center">
-  <img src="public/assets/banner.jpeg" alt="TruckNet — Plus Sûr. Plus Intelligent. Plus Responsable." width="100%"/>
+  <img src="./assets/banner.jpeg" alt="TruckNet — Plus Sûr. Plus Intelligent. Plus Responsable." width="100%"/>
 </p>
 
 ---
