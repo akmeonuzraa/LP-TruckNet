@@ -1,12 +1,13 @@
 <p align="center">
-  <img src="./assets/logo-TruckNet.jpeg" alt="TruckNet Logo" width="160"/>
+  <img src="https://raw.githubusercontent.com/akmeonuzraa/LP-TruckNet/main/assets/logo-TruckNet.jpeg" alt="TruckNet Logo" width="200"/>
 </p>
 
-<h1 align="center">TruckNet</h1>
-<p align="center"><strong>Intelligence au cœur du transport routier marocain</strong></p>
+# TruckNet
+
+**Intelligence au cœur du transport routier marocain**
 
 <p align="center">
-  <img src="./assets/banner.jpeg" alt="TruckNet — Plus Sûr. Plus Intelligent. Plus Responsable." width="100%"/>
+  <img src="https://raw.githubusercontent.com/akmeonuzraa/LP-TruckNet/main/assets/banner.jpeg" alt="TruckNet — Plus Sûr. Plus Intelligent. Plus Responsable." width="100%"/>
 </p>
 
 ---
@@ -17,7 +18,7 @@ TruckNet est une solution B2B SaaS de gestion de flottes conçue pour les transp
 
 ## Démonstration
 
-https://github.com/akmeonuzraa/LP_TruckNet/blob/main/public/assets/demo.mp4
+https://raw.githubusercontent.com/akmeonuzraa/LP-TruckNet/main/assets/demo.mp4
 
 > Démo de la landing page TruckNet — détection d'angles morts, tableau de bord flotte, conformité ESG.
 
@@ -26,6 +27,7 @@ https://github.com/akmeonuzraa/LP_TruckNet/blob/main/public/assets/demo.mp4
 ## Modules
 
 ### SafeDetect
+
 Détection d'angles morts et d'obstacles en temps réel par IA embarquée.
 
 | Spécification | Valeur |
@@ -39,6 +41,7 @@ Détection d'angles morts et d'obstacles en temps réel par IA embarquée.
 ---
 
 ### TruckNet Core / CSR-ESG
+
 Plateforme centrale de gestion de flotte avec reporting ESG automatisé.
 
 | Spécification | Valeur |
@@ -51,6 +54,7 @@ Plateforme centrale de gestion de flotte avec reporting ESG automatisé.
 ---
 
 ### Supply Chain (ColdChain)
+
 Monitoring IoT de la chaîne du froid avec alertes prédictives.
 
 | Spécification | Valeur |
@@ -102,8 +106,7 @@ Monitoring IoT de la chaîne du froid avec alertes prédictives.
 
 ## Déploiement géographique
 
-Casablanca → Tanger → Fès / Marrakech → Agadir
-Allant au monde entier !
+Casablanca → Tanger → Fès / Marrakech → Agadir → International
 
 ---
 
@@ -111,11 +114,13 @@ Allant au monde entier !
 
 | Nom | Rôle |
 |---|---|
-| **Amoura Kenza** | Big Data & IA | Co-Fondatrice 
-| **Ayman Allouch** | Backend senior / Fullstack | Fondateur
-| **Adam El-Araqy** | Systèmes embarqués | Co-Fondateur
-| **Abdelmajid Chantr** | Systèmes embarqués / Capteurs | Co-Fondateur
-| **Ouissal Nari** | Big Data & IA | Co-Fondatrice
+| **Amoura Kenza** | Big Data & IA |
+| **Aymane Allouch** | Backend senior / Fullstack |
+| **Adam El-Araqy** | Systèmes embarqués |
+| **Abdelmajid Chantr** | Systèmes embarqués / Capteurs |
+| **Ouissal Nari** | Big Data & IA |
+
+---
 
 ## Licence
 
